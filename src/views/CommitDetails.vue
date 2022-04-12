@@ -1,7 +1,7 @@
 <template>
+  <button v-on:click="this.$router.go(-1)">Back</button>
   <div v-if="details">
     <h1>Commit details</h1>
-    <h6>{{ sha }}</h6>
     <div>
       <ul>
         <li>name: {{ details.commit.author.name }}</li>
