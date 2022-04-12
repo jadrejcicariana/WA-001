@@ -1,8 +1,5 @@
 <template>
-  <nav>
-    <router-link to="/">Commits</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <nav></nav>
   <router-view />
 </template>
 

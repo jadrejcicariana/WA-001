@@ -1,25 +1,22 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import Commits from "@/views/Commits.vue"
+import { createRouter, createWebHistory } from "vue-router";
+import Commits from "@/views/Commits.vue";
 
 const routes = [
   {
-    path: '/',
-    name: 'Commits',
-    component: Commits
+    path: "/",
+    name: "Commits",
+    component: Commits,
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/CommitDetails.vue')
-  }
-]
+    path: "/commit-details/:sha",
+    name: "commit-details",
+    component: () => import("../views/CommitDetails.vue"),
+  },
+];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
