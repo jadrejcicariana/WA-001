@@ -1,15 +1,15 @@
 <template>
-  <button v-on:click="this.$router.go(-1)">Back</button>
+  <div class="nav">
+    <button class="button" v-on:click="this.$router.go(-1)">Back</button>
+  </div>
   <div v-if="details">
     <h1>Commit details</h1>
-    <div>
-      <ul>
-        <li>name: {{ details.commit.author.name }}</li>
-        <li>email: {{ details.commit.author.email }}</li>
-        <li>date: {{ details.commit.author.date }}</li>
-        <li>message: {{ details.commit.message }}</li>
-      </ul>
-    </div>
+    <ul class="list">
+      <li><strong>name: </strong>{{ details.commit.author.name }}</li>
+      <li><strong>email: </strong>{{ details.commit.author.email }}</li>
+      <li><strong>date: </strong>{{ details.commit.author.date }}</li>
+      <li><strong>message: </strong>{{ details.commit.message }}</li>
+    </ul>
   </div>
 </template>
 
@@ -31,3 +31,21 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.list {
+  list-style-type: none;
+  text-align: left;
+  padding-left: 300px;
+  padding-right: 300px;
+  background-color: #c9fffe;
+}
+.nav {
+  text-align: left;
+  padding-left: 100px;
+}
+.button {
+  font-size: 20px;
+  background-color: #c9fffe;
+}
+</style>

@@ -1,7 +1,7 @@
 <template>
-  <div class="commits">
+  <div>
     <h1>Commits</h1>
-    <ul>
+    <ul class="list">
       <li v-for="commit in commits" :key="commit.sha">
         <router-link
           :to="{ name: 'commit-details', params: { sha: commit.sha } }"
@@ -27,3 +27,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.list {
+  list-style-type: none;
+  background-color: #c9fffe;
+}
+</style>
